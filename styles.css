@@ -1,0 +1,969 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* header */
+.header {
+  position: fixed; /* Keeps the header at the top while scrolling */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 80px; /* Adjusted for a thicker header */
+  background-color: rgba(0, 0, 0, 0.9); /* Optional: adds a dark transparent background */
+  color: #fff;
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+  z-index: 1000;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: adds a subtle shadow */
+  justify-content: space-between; /* Separates the title and navbar */
+}
+
+.header h1{
+  font-family: "Inika", serif;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between; /* This keeps the title and nav items separated */
+  width: 100%; /* Ensures the navbar takes up the full width */
+}
+
+.navbar h1 {
+  font-size: 1.8rem;
+  margin: 0; /* Ensures no extra margin */
+  flex-grow: 1; /* Allows title to take space on the left */
+}
+
+.nav-links {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 1.2rem;
+  font-weight: 500;
+  padding: 8px 15px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.nav-links a:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Adjust spacing below the header */
+.hero {
+  margin-top: 80px; /* Matches the height of the header */
+  min-height: 100vh;
+  background: url('images/husky\ cafe.jpg') center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+}
+
+.hero-content h2 {
+  font-size: 3rem;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
+}
+
+.btn {
+  background-color: rgba(0, 176, 80, 0.9);
+  color: #fff;
+  padding: 1rem 2rem;
+  border-radius: 5px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-top: 1.5rem;
+  display: inline-block;
+}
+
+/* Gallery Section */
+.gallery-section {
+  padding: 4rem 2rem;
+  background-color: #fff;
+  text-align: center;
+}
+
+.gallery-section h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+.gallery-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.gallery-container img {
+  width: 300px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+}
+
+.gallery-container img:hover {
+  transform: scale(1.05);
+}
+
+
+/* Reviews Section */
+.reviews-section {
+  padding: 40px 20px;
+  background-color: #f9f9f9;
+  text-align: center;
+}
+
+.reviews-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.reviews-section p{
+  font-family:'Times New Roman', Times, serif;
+}
+
+.carousel-track-container {
+  position: relative;
+  overflow: hidden;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.carousel-track {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.review-card {
+  min-width: 100%;
+  text-align: center;
+  padding: 20px;
+}
+
+.review-image {
+  width: 200px; /* Adjust size for larger circle */
+  height: 200px; /* Match width for perfect circle */
+  object-fit: cover; /* Ensure the image fits proportionally */
+  border-radius: 50%; /* Makes the image circular */
+  margin: 0 auto 15px auto; /* Centers the image */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Adds a subtle shadow */
+}
+
+.carousel-control {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  padding: 10px 15px;
+  font-size: 1.5rem;
+  z-index: 10;
+  border-radius: 5px;
+}
+
+.carousel-control.prev {
+  left: 10px;
+}
+
+.carousel-control.next {
+  right: 10px;
+}
+
+.review-card p {
+  font-size: 1.2rem;
+  color: #555;
+  line-height: 1.5;
+}
+
+.carousel-control {
+  background-color: rgba(0, 0, 0, 0.7);
+  color: #fff;
+  border: none;
+  padding: 0.5rem 1rem;
+  font-size: 2rem;
+  cursor: pointer;
+  border-radius: 50%;
+  z-index: 10;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: background-color 0.3s ease;
+}
+
+.prev {
+  left: -50px; /* Adjusted position */
+}
+
+.next {
+  right: -50px; /* Adjusted position */
+}
+
+/* Optional: Add a hover effect to carousel controls */
+.carousel-control:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Additional Styling for the page */
+body {
+  padding-top: 80px; /* Ensure content is visible below the fixed header */
+}
+
+
+/* Footer */
+.footer {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 2rem;
+  position: relative;
+}
+
+.footer a {
+  color: #00bfff;
+  text-decoration: none;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+}
+
+
+
+/* about page */
+
+
+.nav-links li a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.nav-links .active {
+  text-decoration: underline;
+}
+
+/* Slideshow Background */
+.about-hero {
+  height: 100vh; /* Full-screen height */
+  position: relative;
+  overflow: hidden;
+}
+
+.about-hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('images/pack\ of\ huskies\ playing.jpg') top/cover no-repeat;
+  animation: slideshow 15s infinite;
+  z-index: -1; /* Keeps the background behind the content */
+}
+
+@keyframes slideshow {
+  0% { background-position: 0% 0%; }
+  33% { background-position: 100% 0%; }
+  66% { background-position: 200% 0%; }
+  100% { background-position: 300% 0%; }
+}
+
+/* Content Overlay */
+.about-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.about-content h2 {
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
+
+.about-content p {
+  font-size: 1.2rem;
+  margin: 10px 0;
+}
+
+.btn-book {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: green;
+  color: white;
+  font-size: 1.2rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-book:hover {
+  background-color: green;
+}
+
+
+
+
+/* General Reset */
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  scroll-behavior: smooth;
+}
+
+/* Header */
+.header {
+  background-color: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  padding: 10px 20px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 10;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links li a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.nav-links .active {
+  text-decoration: underline;
+}
+
+/* Services Section with Full-Page Background Below Header */
+.services-section {
+  height: 100vh; /* Full viewport height */
+  padding-top: 80px; /* Add padding to offset the header height */
+  box-sizing: border-box; /* Ensure padding is included in the height */
+  text-align: center;
+  background: url('images/Designer.png') center/cover no-repeat; /* Full-page background */
+  position: relative;
+  color: white; /* Ensure text is readable */
+  overflow: hidden; /* Prevent content overflow */
+}
+
+.services-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Add a dark overlay for text contrast */
+  z-index: -1; /* Ensure overlay stays behind the content */
+}
+
+.services-section h2 {
+  font-size: 3rem;
+  margin: 0; /* Remove extra spacing */
+  color: #fff; /* White text for contrast */
+}
+
+.services-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  padding: 20px;
+  overflow: auto;
+}
+
+.service-card {
+  background-color: rgba(255, 255, 255, 0.9); /* Slightly transparent white */
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  width: 300px;
+  padding: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+.service-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px 10px 0 0;
+}
+
+/* Dim the 2nd Service Card Image */
+.service-card:nth-child(2) img {
+  filter: brightness(80%); /* Dim the image by reducing brightness */
+  transition: filter 0.3s ease; /* Smooth transition effect */
+}
+
+.service-card:nth-child(2):hover img {
+  filter: brightness(100%); /* Slightly brighten on hover for interactivity */
+}
+
+.service-card h3 {
+  font-size: 1.5rem;
+  margin: 15px 0;
+  color: #444;
+}
+
+.service-card p {
+  font-size: 1rem;
+  color: #666;
+  margin-bottom: 15px;
+}
+
+.service-link {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: green;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.service-link:hover {
+  background-color: green;
+}
+
+
+/* Footer */
+.footer {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+}
+
+.footer-content a {
+  color: #00bfff;
+  text-decoration: none;
+}
+
+.footer-content a:hover {
+  text-decoration: underline;
+}
+
+
+
+/* Contact Section */
+.contact-section {
+  padding: 100px 20px; /* Add padding to avoid overlap with header */
+  background-color: white;
+  color: black;
+  text-align: center;
+}
+
+.contact-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+.contact-section p {
+  margin-bottom: 30px;
+}
+
+/* Form Container */
+.form-container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 30px;
+  background-color: rgba(240, 240, 240, 0.9); /* Light gray background with slight transparency */
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+/* Form Styles */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.contact-form label {
+  text-align: left;
+  font-size: 1.1rem;
+}
+
+.contact-form input,
+.contact-form select,
+.contact-form textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+.contact-form textarea {
+  resize: none; /* Disable resizing for consistency */
+}
+
+.submit-button {
+  background-color: green;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.submit-button:hover {
+  background-color: green;
+}
+
+/* Map Section */
+.map-section {
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.map-section h3 {
+  font-size: 2rem;
+  margin-bottom: 15px;
+}
+
+/* Other Reason Alignment */
+#other-reason-container {
+  margin-top: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+/* Notification Styling */
+.notification {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #4caf50; /* Green success color */
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 1rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+}
+
+.notification.hidden {
+  display: none;
+}
+
+.notification.show {
+  display: block;
+  animation: fadeout 4s forwards;
+}
+
+@keyframes fadeout {
+  0% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+/* Checkbox Containers */
+.checkbox-container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.checkbox-container label {
+  margin-right: 10px;
+  font-size: 1rem;
+}
+
+.checkbox-right {
+  margin-left: 10px;
+}
+
+/* Optional adjustments for form and labels */
+.contact-form label {
+  margin-bottom: 8px;
+}
+
+.contact-form input,
+.contact-form select,
+.contact-form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+/* Notification Styling */
+.notification {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #4caf50; /* Green success color */
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 1rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+}
+
+.notification.hidden {
+  display: none;
+}
+
+.notification.show {
+  display: block;
+  animation: fadeout 4s forwards;
+}
+
+@keyframes fadeout {
+  0% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+/* playtime page */
+/* Playtime Page Specific Styles */
+body.playtime-page {
+  padding-top: 80px; /* Adds space to avoid header overlap */
+}
+
+.playtime-section {
+  padding: 50px 20px;
+  background-color: #f4f4f4;
+  text-align: center;
+}
+
+.playtime-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.schedule {
+  margin: 30px auto;
+  max-width: 800px;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.schedule table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.schedule th, .schedule td {
+  padding: 10px;
+  text-align: center;
+  border: 1px solid #ddd;
+}
+
+.schedule th {
+  background-color: #f2f2f2;
+}
+
+.booking-form {
+  margin-top: 30px;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  max-width: 500px;
+  margin: 30px auto;
+}
+
+.booking-form label {
+  font-size: 1rem;
+  margin-bottom: 10px;
+  display: block;
+}
+
+.booking-form input, .booking-form select, .booking-form button {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+}
+
+.booking-form button {
+  background-color: #5cb85c;
+  color: #fff;
+  cursor: pointer;
+  font-size: 1.1rem;
+  border: none;
+}
+
+.booking-form button:hover {
+  background-color: #4cae4c;
+}
+
+
+/* Time Selection Inputs */
+.booking-form input[type="time"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 1rem;
+  margin-bottom: 15px;
+}
+
+.booking-form input[type="time"]:focus {
+  border-color: #5cb85c;
+  outline: none;
+  box-shadow: 0 0 5px rgba(92, 184, 92, 0.5);
+}
+  
+
+
+
+
+/* Menu Page */
+/* Menu Section */
+.menu-section {
+  padding: 50px 20px;
+  background-color: #ebead7;
+  text-align: center;
+}
+
+.menu-section h2 {
+  font-size: 2.5rem;
+  color: #444;
+  margin-bottom: 20px;
+}
+
+.menu-section p {
+  font-size: 1rem;
+  color: #666;
+  margin-bottom: 30px;
+}
+
+.menu-category {
+  margin-bottom: 40px;
+}
+
+.menu-category h3 {
+  font-size: 1.8rem;
+  color: #333;
+  margin-bottom: 15px;
+  border-bottom: 2px solid #333;
+  display: inline-block;
+  padding-bottom: 5px;
+}
+
+.menu-category h4 {
+  font-size: 1.2rem;
+  color: #555;
+  margin-bottom: 10px;
+}
+
+.menu-category ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 auto;
+  max-width: 600px;
+  text-align: left;
+}
+
+.menu-category ul li {
+  font-size: 1rem;
+  margin: 8px 0;
+  color: #555;
+}
+
+.menu-category ul li::before {
+  content: "• ";
+  color: #333;
+}
+
+/* event page */
+/* Booking Section */
+.booking-section {
+  padding: 50px 20px;
+  background-color: #f4f4f4;
+  text-align: center;
+}
+
+.booking-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.booking-form {
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  max-width: 500px;
+  text-align: left;
+}
+
+.booking-form label {
+  font-size: 1rem;
+  margin-bottom: 5px;
+  display: block;
+}
+
+.booking-form input, .booking-form button {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+}
+
+.booking-form button {
+  background-color: #5cb85c;
+  color: #fff;
+  font-size: 1.1rem;
+  border: none;
+  cursor: pointer;
+}
+
+.booking-form button:hover {
+  background-color: #4cae4c;
+}
+
+.confirmation-message {
+  margin-top: 20px;
+  font-size: 1.2rem;
+  color: #333;
+  background-color: #dff0d8;
+  padding: 10px;
+  border: 1px solid #d6e9c6;
+  border-radius: 5px;
+}
+
+
+
+
+/* Media Queries */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .nav-links {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .hero-content h2 {
+    font-size: 2rem;
+  }
+
+  .gallery-container img {
+    width: 100%;
+    height: auto;
+  }
+
+  .reviews-section h2 {
+    font-size: 2rem;
+  }
+
+  .contact-section h2 {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .header {
+    height: 60px;
+  }
+
+  .navbar {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .hero-content h2 {
+    font-size: 1.5rem;
+  }
+
+  .btn {
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+  }
+}
+
+

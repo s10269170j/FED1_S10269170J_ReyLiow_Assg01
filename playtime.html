@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en" class="playtime-page">  <!-- Add the 'playtime-page' class here -->
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inika:wght@400;700&display=swap" rel="stylesheet">
+  <title>Husky Playtime - Husky Café</title>
+</head>
+<body class="playtime-page">
+  <header id="header" class="header">
+    <nav class="navbar">
+      <h1>The Husky Sanctuary</h1>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Playtime Section -->
+  <section id="playtime-section" class="playtime-section">
+    <h2>Husky Playtime Schedule</h2>
+    <p>Come and enjoy quality time with our friendly huskies! Check out our playtime schedule below and book your spot now.</p>
+    <p>Food and Beverages served all-day!</p>
+
+    <!-- Playtime Schedule -->
+    <div class="schedule">
+      <h3>Playtime Schedule</h3>
+      <table>
+        <tr>
+          <th>Day</th>
+          <th>Playtime Slots</th>
+        </tr>
+        <tr>
+          <td>Monday - Friday</td>
+          <td>10:00 AM - 12:00 PM, 2:00 PM - 4:00 PM</td>
+        </tr>
+        <tr>
+          <td>Saturday</td>
+          <td>9:00 AM - 11:00 AM, 1:00 PM - 3:00 PM</td>
+        </tr>
+        <tr>
+          <td>Sunday</td>
+          <td>Closed</td>
+        </tr>
+      </table>
+    </div>
+
+    <!-- Booking Form -->
+    <div class="booking-form">
+        <h3>Book Your Playtime</h3>
+        <form id="playtime-form">
+          <label for="date">Date</label>
+          <input type="date" id="date" name="date" required>
+      
+          <label for="start-time">Start Time</label>
+          <input type="time" id="start-time" name="start-time" required>
+      
+          <label for="end-time">End Time</label>
+          <input type="time" id="end-time" name="end-time" required>
+      
+          <button type="submit">Book Now</button>
+        </form>
+      </div>
+      
+      <!-- Notification -->
+      <div id="confirmationMessage" class="confirmation-message" style="display: none;">
+        <p>Thank you for your booking! We will process your request and send you a confirmation email shortly.</p>
+      </div>
+    </section>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-content">
+      <p>Contact Us:</p>
+      <p>Phone: +65 98765432</p>
+      <p>Email: <a href="mailto:TheHuskySanctuary@mail.com">TheHuskySanctuary@mail.com</a></p>
+      <p>Follow us:</p>
+      <a href="https://instagram.com" target="_blank" class="social-link">Instagram</a> | 
+      <a href="https://tiktok.com" target="_blank" class="social-link">TikTok</a>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

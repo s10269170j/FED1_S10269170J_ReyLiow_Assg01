@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inika:wght@400;700&display=swap" rel="stylesheet">
+  <title>Event Booking - Husky Café</title>
+  
+</head>
+<body>
+  <header id="header" class="header">
+    <nav class="navbar">
+      <h1>The Husky Sanctuary</h1>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html" class="active">Services</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section id="booking-section" class="booking-section">
+    <br>
+    <br>
+    <h2>Book Our Venue</h2>
+    <p>We’d love to host your event! Please fill in the details below, and we will get back to you shortly.</p>
+
+    <form id="eventBookingForm" class="booking-form" onsubmit="handleBookingSubmission(event)">
+      <label for="name">Full Name:</label>
+      <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+
+      <label for="contact">Contact Number:</label>
+      <input type="tel" id="contact" name="contact" placeholder="Enter your contact number" required>
+
+      <label for="email">Email Address:</label>
+      <input type="email" id="email" name="email" placeholder="Enter your email" required>
+
+      <label for="date">Event Date:</label>
+      <input type="date" id="date" name="date" required>
+
+      <label for="startTime">Start Time:</label>
+      <input type="time" id="startTime" name="startTime" required>
+
+      <label for="endTime">End Time:</label>
+      <input type="time" id="endTime" name="endTime" required>
+
+      <button type="submit">Submit Booking</button>
+    </form>
+
+    <div id="confirmationMessage" class="confirmation-message" style="display: none;">
+      <p>Thank you for your booking! We will contact you shortly to confirm the details.</p>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-content">
+      <p>Contact Us:</p>
+      <p>Phone: +65 98765432</p>
+      <p>Email: <a href="mailto:TheHuskySanctuary@mail.com">TheHuskySanctuary@mail.com</a></p>
+      <p>Follow us:</p>
+      <a href="https://instagram.com" target="_blank" class="social-link">Instagram</a> | 
+      <a href="https://tiktok.com" target="_blank" class="social-link">TikTok</a>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
